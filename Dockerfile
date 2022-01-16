@@ -9,9 +9,7 @@ RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
 
 WORKDIR /var/www/html/
 
-# RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 
 COPY . .
 

@@ -4,6 +4,7 @@ services:
   lumen:
     ports:
       - "8080:8080"
+      - "9003:9003"
     volumes:
       - .:/var/www/html
       - /var/www/html/vendor/
@@ -14,10 +15,6 @@ services:
     restart: always
     depends_on:
       - lumenDemodb
-    expose:
-      - 9003
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
   lumenDemodb:
     image: mysql:8.0
     restart: always
