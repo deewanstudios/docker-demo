@@ -14,7 +14,8 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
     // return xdebug_info();
+    dd(DB::getPDO());
     exit;
 });
